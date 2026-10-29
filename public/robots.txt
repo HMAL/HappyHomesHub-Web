@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Private, auth-only areas — no useful content for search, keep them out of the index
+Disallow: /landlord/
+Disallow: /tenant/
+Disallow: /handyman/
+Disallow: /role-select
+Disallow: /reset-password
+Disallow: /join/
+
+Sitemap: https://happyhomeshub.com/sitemap.xml

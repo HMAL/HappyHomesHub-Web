@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HappyHomesHub — Handyman Flyer</title>
+<style>
+  :root {
+    --green-900: #1B3A2F;
+    --green-400: #34D399;
+    --ink: #0D1F2D;
+  }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; padding: 0; font-family: "Segoe UI", Arial, sans-serif; color: var(--ink); }
+  /* Letter page */
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.6in 0.7in;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero {
+    background: var(--green-900);
+    color: #fff;
+    border-radius: 22px;
+    padding: 38px 36px;
+    text-align: center;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(52,211,153,0.18);
+    color: var(--green-400);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h1 { font-size: 42px; line-height: 1.08; margin: 0 0 12px; font-weight: 800; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.78); margin: 0 auto; max-width: 6.2in; }
+  .free {
+    margin-top: 22px;
+    display: inline-block;
+    background: var(--green-400);
+    color: var(--green-900);
+    font-weight: 800;
+    font-size: 19px;
+    padding: 12px 26px;
+    border-radius: 14px;
+  }
+  .benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 30px 0 6px;
+  }
+  .benefit {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px 20px;
+  }
+  .benefit h3 { margin: 0 0 6px; font-size: 17px; color: var(--green-900); }
+  .benefit p { margin: 0; font-size: 14px; color: #4b5563; line-height: 1.45; }
+  .scan {
+    margin-top: 26px;
+    background: #f0fdf4;
+    border: 2px solid var(--green-400);
+    border-radius: 20px;
+    padding: 26px 30px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .scan .qr {
+    width: 2in; height: 2in;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #d1fae5;
+    flex: 0 0 auto;
+  }
+  .scan h2 { margin: 0 0 8px; font-size: 26px; color: var(--green-900); }
+  .scan p { margin: 0 0 6px; font-size: 15px; color: #374151; line-height: 1.45; }
+  .scan .url {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green-900);
+    word-break: break-all;
+  }
+  .steps {
+    margin-top: 22px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  .step { flex: 1; text-align: center; font-size: 12.5px; color: #4b5563; }
+  .step .n {
+    display: inline-flex; width: 30px; height: 30px; border-radius: 999px;
+    background: var(--green-900); color: var(--green-400); font-weight: 800;
+    align-items: center; justify-content: center; margin-bottom: 6px;
+  }
+  .foot {
+    margin-top: auto;
+    padding-top: 22px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 13px;
+  }
+  .foot strong { color: var(--green-900); }
+  @media print {
+    @page { size: Letter; margin: 0; }
+    .page { margin: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="hero">
+      <span class="badge">For Handymen &amp; Contractors</span>
+      <h1>Get jobs from local landlords</h1>
+      <p>Build a free profile, accept repair jobs near you, set your own schedule, and get paid straight to your bank when the work is done.</p>
+      <div class="free">100% FREE · No subscription · No commission · No lead fees</div>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit">
+        <h3>Get paid in-app</h3>
+        <p>Connect your bank once. When a job is approved, the money is deposited straight to you — we take no cut.</p>
+      </div>
+      <div class="benefit">
+        <h3>Real jobs, no lead fees</h3>
+        <p>Landlords send you jobs directly. No bidding wars and no paying for leads that never reply.</p>
+      </div>
+      <div class="benefit">
+        <h3>Manage your schedule</h3>
+        <p>Set a visit time, see upcoming jobs at a glance, and keep your day organized.</p>
+      </div>
+      <div class="benefit">
+        <h3>Build your reputation</h3>
+        <p>Earn ratings and a verified badge that win you more work over time.</p>
+      </div>
+    </div>
+
+    <div class="scan">
+      <!-- QR encodes the handyman deep link; a scan opens signup with the Handyman role
+           preselected. Static image (qr-handyman.png) — keep it in the same folder as
+           this file. Regenerate only if the signup URL changes. -->
+      <img class="qr"
+           alt="Scan to register as a handyman"
+           src="qr-handyman.png" />
+      <div>
+        <h2>Scan to sign up free</h2>
+        <p>Point your phone camera at the code — it takes you straight to handyman registration. Takes about 2 minutes.</p>
+        <p class="url">app.happyhomeshub.com/signup?role=handyman</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="n">1</div>Build your profile — list your trades &amp; area</div>
+      <div class="step"><div class="n">2</div>Get discovered by local landlords</div>
+      <div class="step"><div class="n">3</div>Accept &amp; schedule the jobs that fit</div>
+      <div class="step"><div class="n">4</div>Finish the job &amp; get paid</div>
+    </div>
+
+    <div class="foot">
+      <strong>HappyHomesHub</strong> — the easy way for landlords, tenants, and handymen to work together.<br />
+      Questions? support@happyhomeshub.com
+    </div>
+
+  </div>
+</body>
+</html>

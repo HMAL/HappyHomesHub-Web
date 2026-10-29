@@ -1,0 +1,15 @@
+# Cloudflare Pages reads this file (vercel.json is ignored on Cloudflare).
+# Security headers for every route + long-cache for fingerprinted assets.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com https://www.google-analytics.com https://region1.google-analytics.com; script-src 'self' https://js.stripe.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.supabase.co https://www.google-analytics.com https://www.googletagmanager.com; frame-src https://js.stripe.com https://hooks.stripe.com https://checkout.stripe.com; form-action 'self' https://checkout.stripe.com
+# script-src no longer needs 'unsafe-inline' — the GA snippet was moved to /ga.js.
+# style-src keeps 'unsafe-inline' because Tailwind/React emit inline style attributes.
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

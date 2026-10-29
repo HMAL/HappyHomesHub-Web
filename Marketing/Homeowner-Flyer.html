@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HappyHomesHub — Homeowner Flyer</title>
+<style>
+  :root {
+    --ink: #0D1F2D;
+    --gold: #D4972A;
+    --gold-soft: #FBF3E2;
+  }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; padding: 0; font-family: "Segoe UI", Arial, sans-serif; color: var(--ink); }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    padding: 0.55in 0.7in;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 22px;
+    padding: 36px 36px 32px;
+    text-align: center;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(212,151,42,0.18);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 40px; line-height: 1.08; margin: 0 0 12px; font-weight: 800; }
+  .hero p { font-size: 16.5px; color: rgba(255,255,255,0.78); margin: 0 auto; max-width: 6.2in; }
+  .free {
+    margin-top: 20px;
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 18px;
+    padding: 12px 26px;
+    border-radius: 14px;
+  }
+  .free small { display:block; font-size: 12.5px; font-weight: 600; opacity: .8; margin-top: 2px; }
+
+  /* Coupon ticket */
+  .coupon {
+    margin: 22px 0 4px;
+    display: flex;
+    align-items: stretch;
+    border: 2.5px dashed var(--gold);
+    border-radius: 16px;
+    background: var(--gold-soft);
+    overflow: hidden;
+  }
+  .coupon .left { flex: 1; padding: 18px 22px; }
+  .coupon .tag { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
+  .coupon .deal { font-size: 22px; font-weight: 800; color: var(--ink); margin: 3px 0 4px; }
+  .coupon .fine { font-size: 12.5px; color: #6b5a36; }
+  .coupon .code {
+    flex: 0 0 auto;
+    background: var(--ink);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    text-align: center;
+  }
+  .coupon .code span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  .coupon .code b { font-size: 22px; letter-spacing: .04em; }
+
+  .benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 22px 0 4px;
+  }
+  .benefit { border: 1.5px solid #e5e7eb; border-radius: 16px; padding: 16px 18px; }
+  .benefit h3 { margin: 0 0 5px; font-size: 16px; color: var(--ink); }
+  .benefit p { margin: 0; font-size: 13.5px; color: #4b5563; line-height: 1.42; }
+
+  .scan {
+    margin-top: 22px;
+    background: var(--gold-soft);
+    border: 2px solid var(--gold);
+    border-radius: 20px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  .scan .qr { width: 1.9in; height: 1.9in; border-radius: 14px; background: #fff; border: 1px solid #efe2c4; flex: 0 0 auto; }
+  .scan h2 { margin: 0 0 7px; font-size: 25px; color: var(--ink); }
+  .scan p { margin: 0 0 5px; font-size: 14.5px; color: #374151; line-height: 1.42; }
+  .scan .url { margin-top: 7px; font-size: 13.5px; font-weight: 700; color: var(--ink); word-break: break-all; }
+
+  .steps { margin-top: 20px; display: flex; gap: 10px; justify-content: space-between; }
+  .step { flex: 1; text-align: center; font-size: 12px; color: #4b5563; }
+  .step .n {
+    display: inline-flex; width: 30px; height: 30px; border-radius: 999px;
+    background: var(--ink); color: var(--gold); font-weight: 800;
+    align-items: center; justify-content: center; margin-bottom: 6px;
+  }
+  .foot { margin-top: auto; padding-top: 18px; text-align: center; color: #6b7280; font-size: 12.5px; }
+  .foot strong { color: var(--ink); }
+  @media print {
+    @page { size: Letter; margin: 0; }
+    .page { margin: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="hero">
+      <span class="badge">For Homeowners &amp; Landlords</span>
+      <h1>All your rentals, one simple app</h1>
+      <p>Collect rent online, handle repairs, track expenses, and run tax-ready reports — without spreadsheets or chasing checks. HappyHomesHub takes no cut of your rent.</p>
+      <div class="free">First 3 months FREE<small>then from $7/month per property · cancel anytime</small></div>
+    </div>
+
+    <!-- Coupon: first property free forever -->
+    <div class="coupon">
+      <div class="left">
+        <div class="tag">Limited launch offer — first 100 homeowners</div>
+        <div class="deal">Your first property — FREE for a year</div>
+        <div class="fine">Apply at checkout. Then upgrade to Super Landlord for just $3/mo. Plans from $7/property.</div>
+      </div>
+      <div class="code">
+        <span>Use code</span>
+        <b>HAPPYHOMEOWNER</b>
+      </div>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit">
+        <h3>Online rent collection</h3>
+        <p>Tenants pay by card or bank, deposited straight to your account. We never hold your money or take a cut.</p>
+      </div>
+      <div class="benefit">
+        <h3>Repairs, handled</h3>
+        <p>Tenants report issues with photos. Assign a vetted handyman, track the timeline, and pay them in-app.</p>
+      </div>
+      <div class="benefit">
+        <h3>Tax-ready in one click</h3>
+        <p>Every payment and expense tracked per property, with a Schedule E export and cashflow charts at tax time.</p>
+      </div>
+      <div class="benefit">
+        <h3>Scales with you</h3>
+        <p>Start with one home and add properties as you grow — every feature included on every property.</p>
+      </div>
+    </div>
+
+    <div class="scan">
+      <!-- QR encodes the homeowner deep link; a scan opens signup with the Homeowner role
+           preselected. Static image (qr-homeowner.png) — keep it in the same folder as
+           this file. Regenerate only if the signup URL changes. -->
+      <img class="qr"
+           alt="Scan to sign up as a homeowner"
+           src="qr-homeowner.png" />
+      <div>
+        <h2>Scan to start free</h2>
+        <p>Point your phone camera at the code — it takes you straight to homeowner signup. Don't forget code <b>HAPPYHOMEOWNER</b>.</p>
+        <p class="url">app.happyhomeshub.com/signup?role=landlord</p>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="n">1</div>Add your property &amp; set the rent</div>
+      <div class="step"><div class="n">2</div>Invite your tenant with a secure link</div>
+      <div class="step"><div class="n">3</div>Collect rent &amp; track expenses</div>
+      <div class="step"><div class="n">4</div>Export tax-ready reports</div>
+    </div>
+
+    <div class="foot">
+      <strong>HappyHomesHub</strong> — the easy way for landlords, tenants, and handymen to work together.<br />
+      Questions? support@happyhomeshub.com
+    </div>
+
+  </div>
+</body>
+</html>

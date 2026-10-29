@@ -1,0 +1,26 @@
+# HappyHomesHub
+
+> Free property management software for landlords, tenants, and handymen.
+> Track rent payments, maintenance requests, leases, and expenses in one place.
+> First property free forever; tenants and handymen always free. English and Spanish.
+
+## Product
+
+- [Home](https://happyhomeshub.com/): What HappyHomesHub does for each role
+- [For landlords](https://happyhomeshub.com/for-landlords): Rent tracking, tenant invites, maintenance, expenses
+- [For tenants](https://happyhomeshub.com/for-tenants): Pay rent online, submit repairs, message your landlord
+- [For handymen](https://happyhomeshub.com/for-handymen): Free job board with in-app payment
+
+## Help
+
+- [FAQ](https://happyhomeshub.com/faq): Pricing, screening, security, and role-specific questions
+- [Contact](https://happyhomeshub.com/contact): Support form and email
+
+## Blog
+
+- [Blog index](https://happyhomeshub.com/blog): Guides on rental costs, insurance, utilities, and market data
+
+## Policies
+
+- [Terms of Service](https://happyhomeshub.com/legal/terms)
+- [Privacy Policy](https://happyhomeshub.com/legal/privacy)
